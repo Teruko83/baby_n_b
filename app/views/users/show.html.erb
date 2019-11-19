@@ -1,5 +1,9 @@
 <h1>User Show</h1>
 
-<% @user.babies.each do |baby| %>
-  <%= baby.first_name %>
+<h2>Here are the babies you've created until now:</h2>
+<ul>
+    <% @user.babies.each do |baby| %>
+  <li> <%= link_to baby.first_name, baby_path(baby) %> </li>
   <% end %>
+</ul>
+
