@@ -19,13 +19,13 @@ class BabiesController < ApplicationController
   end
 
   def update
-    @baby = baby.find(params[:user_id])
-    @baby.update(params_private)
+    @baby = Baby.find(params[:id])
+    @baby.update(params_private_baby)
+    redirect_to user_path(current_user)
   end
 
   def edit
-    @baby = baby.find(params[:id])
-    redirect_to babies_path
+    @baby = Baby.find(params[:id])
   end
 
   def destroy
