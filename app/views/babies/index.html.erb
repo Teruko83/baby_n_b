@@ -2,10 +2,16 @@
 
 
 <div class="container">
+  <h2>Babies available</h2>
   <div class="cards">
     <% @babies.each do |baby| %>
 
+
+
+<%= link_to root_path do %>
+
       <div class="card-product">
+
       <img src="https://source.unsplash.com/random?baby,fun" />
 
         <div class="card-product-infos">
@@ -15,7 +21,9 @@
         </div>
 
       </div>
+      <% end %>
     <% end %>
+
   </div>
 
 

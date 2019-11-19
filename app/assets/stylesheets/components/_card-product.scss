@@ -5,6 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+
 }
 
 .card-product img {
@@ -27,6 +28,18 @@
   margin-top: 8px;
 }
 
+
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.card-product p :hover {
+
+  text-decoration: none;
+}
+
+
+.card-product .card-product-infos :hover {
+  text-decoration: none;
+}
+
