@@ -8,7 +8,7 @@ class BabiesController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     @baby = Baby.new
   end
 
