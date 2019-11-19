@@ -15,8 +15,11 @@ class BabiesController < ApplicationController
   def create
     @baby = Baby.new(params_private_baby)
     @baby.user = current_user
-    @baby.save
-    redirect_to user_path(current_user)
+    if @baby.save
+      redirect_to user_path(current_user)
+    else
+      render "babies/new"
+    end
   end
 
   def update
@@ -30,7 +33,8 @@ class BabiesController < ApplicationController
   end
 
   def destroy
-    babies.find(params[:id]).destroy
+    Baby.find(params[:id]).destroy
+    redirect_to user_path(current_user)
   end
 
   private

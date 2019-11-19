@@ -3,7 +3,7 @@
 <h2>Here are the babies you've created until now:</h2>
 <ul>
     <% @user.babies.each do |baby| %>
-  <li> <%= link_to baby.first_name, baby_path(baby) %> </li>
+  <li> <%= link_to baby.first_name, baby_path(baby) %> <%= link_to "Delete", baby_path(baby), :method => 'delete' %></li>
   <% end %>
 </ul>
 
