@@ -13,11 +13,10 @@ class BabiesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
     @baby = Baby.new(params_private_baby)
-    @baby.user = @user
+    @baby.user = current_user
     @baby.save
-    redirect_to user_path(@user)
+    redirect_to user_path(current_user)
   end
 
   def update
@@ -37,7 +36,7 @@ class BabiesController < ApplicationController
   private
 
   def params_private_baby
-    params.require(:babies).permit(:date_of_birth, :category, :bio)
+    params.require(:baby).permit(:first_name, :date_of_birth, :category, :bio)
   end
 
 end
