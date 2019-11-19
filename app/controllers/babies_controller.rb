@@ -8,7 +8,6 @@ class BabiesController < ApplicationController
   end
 
   def new
-    # @user = User.find(params[:id])
     @baby = Baby.new
   end
 
@@ -38,5 +37,4 @@ class BabiesController < ApplicationController
   def params_private_baby
     params.require(:baby).permit(:first_name, :date_of_birth, :category, :bio)
   end
-
 end
