@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_164817) do
 
   create_table "babies", force: :cascade do |t|
     t.string "first_name"
-    t.string "date_of_birth"
+    t.string "date_of_birth" #must be changed to a date at some point
     t.string "category"
     t.string "bio"
     t.boolean "availability"
