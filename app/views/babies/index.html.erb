@@ -1,7 +1,10 @@
 <h1>Welcome to BB'n'B</h1>
 
 <% @babies.each do |baby| %>
-  <p><%= @babies.name %></p>
+  <p><%= baby.first_name %></p>
+  <p><%= baby.date_of_birth %></p>
+  <p><%= baby.category %></p>
+  <p><%= baby.bio %></p>
 <% end %>
 
 <%= link_to "Add a baby", new_baby_path(@babies) %>
