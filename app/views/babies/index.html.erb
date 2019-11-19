@@ -1,22 +1,26 @@
 <h1>Welcome to BB'n'B</h1>
 
 
+<div class="container">
+  <div class="cards">
+    <% @babies.each do |baby| %>
 
-  <% @babies.each do |baby| %>
-<div class="card-product">
-  <img src="https://source.unsplash.com/random?Baby" />
-  <div class="card-product-infos">
+      <div class="card-product">
+      <img src="https://source.unsplash.com/random?baby,fun" />
 
-    <h2><%= baby.first_name %></h2>
-    <p><strong>Date of birth: </strong><%= baby.date_of_birth %></p>
-    <p><strong>Type of baby: </strong><%= baby.category %></p>
+        <div class="card-product-infos">
+          <h2><%= baby.first_name %></h2>
+          <p><strong>Date of birth: </strong><%= baby.date_of_birth %></p>
+          <p><strong>Type of baby: </strong><%= baby.category %></p>
+        </div>
+
+      </div>
+    <% end %>
   </div>
+
+
+<%= link_to "Add a baby", new_baby_path, class: "btn btn-ghost" %>
+
 </div>
-
-<% end %>
-
-
-
-<%= link_to "Add a baby", new_baby_path  %>
 
 
