@@ -7,41 +7,37 @@ class BabiesController < ApplicationController
     @baby = Baby.find(params[:id])
   end
 
-  def new
-    @user = User.find(params[:id])
-    @baby = Baby.new
-  end
+  # def new
+  #   @user = User.find(params[:id])
+  #   @baby = Baby.new
+  # end
 
-  def create
-    @user = User.find(params[:user_id])
-    @baby = Baby.new(params_private_baby)
-    @baby.user = @user
-    @baby.save
-    redirect_to user_path(@user)
-  end
+  # def create
+  #   @user = User.find(params[:user_id])
+  #   @baby = Baby.new(params_private_baby)
+  #   @baby.user = @user
+  #   @baby.save
+  #   redirect_to user_path(@user)
+  # end
 
-  def update
-    @baby = baby.find(params[:user_id])
-    @baby.update(params_private)
-  end
+  # def update
+  #   @baby = baby.find(params[:user_id])
+  #   @baby.update(params_private)
+  # end
 
-  def edit
-    @baby = baby.find(params[:id])
-    redirect_to babies_path
-  end
+  # def edit
+  #   @baby = baby.find(params[:id])
+  #   redirect_to babies_path
+  # end
 
-  def destroy
-    babies.find(params[:id]).destroy
-  end
+  # def destroy
+  #   babies.find(params[:id]).destroy
+  # end
 
-  def displayall
-    @babies = Baby.all
-  end
+  # private
 
-  private
-
-  def params_private_baby
-    params.require(:babies).permit(:date_of_birth, :category, :bio)
-  end
+  # def params_private_baby
+  #   params.require(:babies).permit(:date_of_birth, :category, :bio)
+  # end
 
 end
