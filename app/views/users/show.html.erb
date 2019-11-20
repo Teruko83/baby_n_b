@@ -1,9 +1,31 @@
 <h1>User Show</h1>
 
-<h2>Here are the babies you've created until now:</h2>
+<h5> Your details:</h2>
+
+<ul>
+  <li>
+    <h6>Name:</h6>
+  </li>
+    <p><%= @user.name %></p>
+  <li>
+    <h6>Email:</h6>
+  </li>
+    <p><%= @user.email %></p>
+  <li>
+    <h6>Address:</h6>
+  </li>
+    <p><%= @user.address %></p>
+  <li>
+    <h6>Bio:</h6>
+  </li>
+    <p><%= @user.bio %></p>
+</ul>
+
+
+<h5>Your babies:</h2>
 <ul>
     <% @user.babies.each do |baby| %>
-  <li> <%= link_to baby.first_name, baby_path(baby) %> <%= link_to "Delete", baby_path(baby), :method => 'delete' %></li>
+  <li> <%= link_to baby.first_name, baby_path(baby) %> | <%= link_to "Delete", baby_path(baby), :method => 'delete' %> | </li>
   <% end %>
 </ul>
 
