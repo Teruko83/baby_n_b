@@ -1,19 +1,22 @@
 <!-- contient Profile du bebe et bouton book -->
 <!-- vu du point de vue de utilisateur -->
-<h1><%= @baby.first_name %>'s Profil</h1>
-<br>
-<h4>Date of birth</h4>
-<p><%= @baby.date_of_birth %></p>
-<h4>Category</h4>
-<p><%= @baby.category %></p>
-<h4>Description</h4>
-<p><%= @baby.bio %></p>
-<br>
+<div class="container">
 
-<ul>
+  <h1><%= @baby.first_name %>'s Profil</h1>
+  <br>
+  <h4>Date of birth</h4>
+  <p><%= @baby.date_of_birth %></p>
+  <h4>Category</h4>
+  <p><%= @baby.category %></p>
+  <h4>Description</h4>
+  <p><%= @baby.bio %></p>
+  <br>
+
+
   <%= link_to "Book this baby",  baby_bookings_path(@baby), :method => 'post', class: "btn btn-primary" %>
-    <% if current_user == @baby.user %>
-      <li><%= link_to "Update",  edit_baby_path %></li>
-      <li><%= link_to "Delete", baby_path(@baby), :method => 'delete' %></li>
-    <% end %>
-</ul>
+  <% if current_user == @baby.user %>
+    <%= link_to "Update",  edit_baby_path, class: "btn btn-primary" %>
+    <%= link_to "Delete", baby_path(@baby), :method => 'delete', class: "btn btn-primary"  %>
+  <% end %>
+
+</div>
