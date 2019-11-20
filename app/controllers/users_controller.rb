@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    redirect_to user_path
   end
 
   def destroy
@@ -34,6 +33,6 @@ class UsersController < ApplicationController
   private
 
   def params_private
-    params.require(:user).permit(:email, :name)
+    params.require(:user).permit(:email, :name, :address, :bio)
   end
 end
