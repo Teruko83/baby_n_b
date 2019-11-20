@@ -1,10 +1,14 @@
-<h1>Babies#new</h1>
-<%= simple_form_for [@baby] do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :date_of_birth %>
-  <%= f.input :category %>
-  <%= f.input :bio %>
+<div class="container">
 
-  <%= f.submit "Add a baby", class: "btn btn-primary" %>
+  <h1>Ajouter votre bébé</h1>
+  <%= simple_form_for [@baby] do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :date_of_birth %>
+    <%= f.input :category %>
+    <%= f.input :bio %>
 
-<% end %>
+    <%= f.submit "Add a baby", class: "btn btn-primary" %>
+
+  <% end %>
+
+</div>

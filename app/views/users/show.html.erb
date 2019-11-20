@@ -1,53 +1,52 @@
+<div class="container">
+  <h1>User's profil</h1>
 
-<h1>User's profil</h1>
-<h2>Here are the babies you've created until now:</h2>
+  <h2> Your details:</h2>
+
+  <ul>
+    <li>
+      <h6>Name:</h6>
+    </li>
+      <p><%= @user.name %></p>
+    <li>
+      <h6>Email:</h6>
+    </li>
+      <p><%= @user.email %></p>
+    <li>
+      <h6>Address:</h6>
+    </li>
+      <p><%= @user.address %></p>
+    <li>
+      <h6>Bio:</h6>
+    </li>
+      <p><%= @user.bio %></p>
+  </ul>
 
 
-<h2> Your details:</h2>
+  <%= link_to "Update details", edit_user_registration_path, class: "btn-primary btn" %>
 
-<ul>
-  <li>
-    <h6>Name:</h6>
-  </li>
-    <p><%= @user.name %></p>
-  <li>
-    <h6>Email:</h6>
-  </li>
-    <p><%= @user.email %></p>
-  <li>
-    <h6>Address:</h6>
-  </li>
-    <p><%= @user.address %></p>
-  <li>
-    <h6>Bio:</h6>
-  </li>
-    <p><%= @user.bio %></p>
+
+<br>
+  <h2>Your babies:</h2>
+
+  <ul>
+      <% @user.babies.each do |baby| %>
+    <li> <%= link_to baby.first_name, baby_path(baby) %> | <%= link_to "Delete", baby_path(baby), :method => 'delete' %> | </li>
+    <% end %>
+  </ul>
+   <%= link_to "Add a baby", new_baby_path, class: "btn btn-primary" %>
+
+<br>
+  <h2>Your bookings</h2>
+
+  <ul>
+
+    <% if @bookings == nil %>
+    <p>Any booking done yet </p>
+    <% else @bookings.each do |booking|  %>
+    <% @baby = Baby.find(booking.baby_id)%>
+    <li> <%= @baby.first_name %></li>
+    <% end %>
+    <% end %>
 </ul>
-
-
-<%= link_to "Update details", edit_user_registration_path, class: "btn-primary btn" %>
-
-
-
-<h2>Your babies:</h2>
-
-<ul>
-    <% @user.babies.each do |baby| %>
-  <li> <%= link_to baby.first_name, baby_path(baby) %> | <%= link_to "Delete", baby_path(baby), :method => 'delete' %> | </li>
-  <% end %>
-</ul>
- <%= link_to "Add a baby", new_baby_path, class: "btn btn-primary" %>
-
-<h2>Your bookings</h2>
-
-<ul>
-
-  <% if @bookings == nil %>
-  <p>Any booking done yet </p>
-  <% else @bookings.each do |booking|  %>
-
-  <% @baby = Baby.find(booking.baby_id)%>
-  <li> <%= @baby.first_name %></li>
-  <% end %>
-  <% end %>
-</ul>
+</div>

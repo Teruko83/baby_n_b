@@ -12,8 +12,10 @@
   <p><%= @baby.bio %></p>
   <br>
 
-
+  <%= link_to "Back", root_path, class: "btn btn-primary" %>
   <%= link_to "Book this baby",  baby_bookings_path(@baby), :method => 'post', class: "btn btn-primary" %>
+
+
   <% if current_user == @baby.user %>
     <%= link_to "Update",  edit_baby_path, class: "btn btn-primary" %>
     <%= link_to "Delete", baby_path(@baby), :method => 'delete', class: "btn btn-primary"  %>
