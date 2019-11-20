@@ -1,15 +1,10 @@
 <h1>Babies#new</h1>
-<%= form_for(@baby) do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :date_of_birth %>
-  <%= f.text_field :date_of_birth %>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-  <%= f.label :bio %>
-  <%= f.text_field :bio %>
+<%= simple_form_for [@baby] do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :date_of_birth %>
+  <%= f.input :category %>
+  <%= f.input :bio %>
 
-  <%= f.submit %>
+  <%= f.submit "Add a baby", class: "btn btn-primary" %>
 
 <% end %>
-
