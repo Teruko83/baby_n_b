@@ -1,12 +1,9 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = Booking.all.find(user_id: current_user)
-  end
+  # def index
+  #   @bookings = Booking.all.find(current_user)
+  # end
 
   def create
-  # baby_bookings POST   /babies/:baby_id/bookings(.:format)                                                      bookings#create
-  # "user_id"
-  #   t.bigint "baby_id"
     @baby = Baby.find(params[:baby_id])
     @booking = Booking.new
     @booking.user = current_user
@@ -18,8 +15,4 @@ class BookingsController < ApplicationController
       redirect_to baby_path(@baby)
     end
   end
-
-  private
-
-
 end

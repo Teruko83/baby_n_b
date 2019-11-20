@@ -1,5 +1,4 @@
-<h1>User Show</h1>
-
+<h1>User show</h1>
 <h2>Here are the babies you've created until now:</h2>
 <ul>
     <% @user.babies.each do |baby| %>
@@ -7,3 +6,16 @@
   <% end %>
 </ul>
 
+<h2>Your bookings</h2>
+
+<ul>
+
+  <% if @bookings == nil %>
+  <p>Any booking done yet </p>
+  <% else @bookings.each do |booking|  %>
+
+  <% @baby = Baby.find(booking.baby_id)%>
+  <li> <%= @baby.first_name %></li>
+  <% end %>
+  <% end %>
+</ul>

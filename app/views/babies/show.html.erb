@@ -10,7 +10,7 @@
 <p><%= @baby.bio %></p>
 <br>
 <ul>
-    <li><%= link_to "Book this baby",  baby_bookings_path(@baby), :method => 'post' %></li>
+   <%= link_to "Book this baby",  baby_bookings_path(@baby), :method => 'post', class: "btn btn-primary" %>
     <li><%= link_to "Update",  edit_baby_path %></li>
     <li><%= link_to "Delete", baby_path(@baby), :method => 'delete' %></li>
 </ul>
