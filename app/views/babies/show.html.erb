@@ -9,6 +9,7 @@
 <h4>Description</h4>
 <p><%= @baby.bio %></p>
 <br>
+
 <ul>
    <%= link_to "Book this baby",  baby_bookings_path(@baby), :method => 'post', class: "btn btn-primary" %>
     <li><%= link_to "Update",  edit_baby_path %></li>
