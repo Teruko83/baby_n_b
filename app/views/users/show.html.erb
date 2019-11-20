@@ -1,6 +1,9 @@
-<h1>User Show</h1>
 
-<h5> Your details:</h2>
+<h1>User show</h1>
+<h2>Here are the babies you've created until now:</h2>
+
+
+<h2> Your details:</h2>
 
 <ul>
   <li>
@@ -22,10 +25,24 @@
 </ul>
 
 
-<h5>Your babies:</h2>
+<h2>Your babies:</h2>
+
 <ul>
     <% @user.babies.each do |baby| %>
   <li> <%= link_to baby.first_name, baby_path(baby) %> | <%= link_to "Delete", baby_path(baby), :method => 'delete' %> | </li>
   <% end %>
 </ul>
 
+<h2>Your bookings</h2>
+
+<ul>
+
+  <% if @bookings == nil %>
+  <p>Any booking done yet </p>
+  <% else @bookings.each do |booking|  %>
+
+  <% @baby = Baby.find(booking.baby_id)%>
+  <li> <%= @baby.first_name %></li>
+  <% end %>
+  <% end %>
+</ul>
