@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_164817) do
+ActiveRecord::Schema.define(version: 2019_11_20_161803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "babies", force: :cascade do |t|
     t.string "first_name"
-    t.string "date_of_birth" #must be changed to a date at some point
+    t.string "date_of_birth"
     t.string "category"
     t.string "bio"
     t.boolean "availability"
@@ -50,6 +50,10 @@ ActiveRecord::Schema.define(version: 2019_11_19_164817) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
