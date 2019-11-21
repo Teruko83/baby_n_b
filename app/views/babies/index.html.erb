@@ -9,19 +9,20 @@
 
       <div class="card-product">
 
-        <%= cl_image_tag baby.photo %>
+        <%= cl_image_tag baby.photo, height: 300, width: 400, crop: :fill %>
 
           <div class="card-product-infos">
             <h2><%= baby.first_name %></h2>
             <p><strong>Date of birth: </strong><%= baby.date_of_birth %></p>
             <p><strong>Type of baby: </strong><%= baby.category %></p>
-            <p><strong>Price: </strong><%= baby.price %></p>
           </div>
 
       </div>
     <% end %>
     <% end %>
   </div>
+
+
   <br>
 </div>
 
