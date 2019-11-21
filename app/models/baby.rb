@@ -1,4 +1,8 @@
 class Baby < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   belongs_to :user
-  validates :first_name, :category, :bio, :date_of_birth, presence: true
+  has_many :bookings, dependent: :destroy
+  validates :first_name, :category, :bio, :price, :date_of_birth, presence: true
+
 end
