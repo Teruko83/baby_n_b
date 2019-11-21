@@ -3,6 +3,6 @@ class Baby < ApplicationRecord
 
   belongs_to :user
   has_many :bookings, dependent: :destroy
-  validates :first_name, :category, :bio, :date_of_birth, presence: true
+  validates :first_name, :category, :bio, :price, :date_of_birth, presence: true
 
 end
