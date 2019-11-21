@@ -1,34 +1,33 @@
-
 <h1>User's profil</h1>
 
 <div><%= cl_image_tag @user.photo %></div>
-<h2>Here are the babies you've created until now:</h2>
+
 
 
 <h2> Your details:</h2>
 
+
 <ul>
   <li>
-    <h6>Name:</h6>
+    <h4>Name:</h4>
   </li>
     <p><%= @user.name %></p>
   <li>
-    <h6>Email:</h6>
+    <h4>Email:</h4>
   </li>
     <p><%= @user.email %></p>
   <li>
-    <h6>Address:</h6>
+    <h4>Address:</h4>
   </li>
     <p><%= @user.address %></p>
   <li>
-    <h6>Bio:</h6>
+    <h4>Bio:</h4>
   </li>
     <p><%= @user.bio %></p>
 </ul>
 
 
 <%= link_to "Update details", edit_user_registration_path, class: "btn-primary btn" %>
-
 
 
 <h2>Your babies:</h2>
@@ -40,16 +39,28 @@
 </ul>
  <%= link_to "Add a baby", new_baby_path, class: "btn btn-primary" %>
 
-<h2>Your bookings</h2>
+<h2>Bookings</h2>
 
 <ul>
 
-  <% if @bookings == nil %>
-  <p>Any booking done yet </p>
-  <% else @bookings.each do |booking|  %>
+  <% if @user.bookings == nil %>
+    <p>Any booking done yet </p>
+  <% else %>
+    <% @user.bookings.each do |booking|  %>
+       <p><%= booking.baby.first_name %> | <%= booking.booking_status %></p>
+    <% end %>
+  <% end %>
 
-  <% @baby = Baby.find(booking.baby_id)%>
-  <li> <%= @baby.first_name %></li>
+<h2>Requests</h2>
+
+  <% @user.babies.each do |baby| %>
+    <% baby.bookings.each do |booking| %>
+      <p> <%= baby.first_name %> </p>
+      <p> <%= booking.booking_status %> </p>
+      <p><%= link_to "Accept", booking_path(booking, new_status: "Accepted"), method: :patch, class: "btn btn-primary" %> <%= link_to "Deny", booking_path(booking, new_status: "Denied"), method: :patch, class: "btn btn-primary" %></p>
+      </%>
+
+    <% end %>
   <% end %>
-  <% end %>
+
 </ul>

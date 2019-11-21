@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.booking_status = "Pending"
     @baby = Baby.find(params[:baby_id])
     @booking.user = current_user
     @booking.baby = @baby
@@ -15,6 +16,19 @@ class BookingsController < ApplicationController
     else
       redirect_to baby_path(@baby)
     end
+  end
+
+  def update
+
+    @booking = Booking.find(params[:id])
+
+    if params[:new_status] == "Accepted"
+      @booking.booking_status = "Accepted"
+    elsif params[:new_status] == "Denied"
+      @booking.booking_status = "Denied"
+    end
+    @booking.save
+    redirect_to user_path(current_user)
   end
 
   private

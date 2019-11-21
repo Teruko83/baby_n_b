@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_11_21_183437) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_11_21_183437) do
     t.datetime "updated_at", null: false
     t.date "booking_start"
     t.date "booking_end"
+    t.string "booking_status"
     t.index ["baby_id"], name: "index_bookings_on_baby_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
