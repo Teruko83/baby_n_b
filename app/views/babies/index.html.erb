@@ -5,24 +5,37 @@
   <div class="cards">
     <% @babies.each do |baby| %>
 
-    <%= link_to baby_path(baby.id) do %>
+     <%= link_to baby_path(baby.id) do %>
 
-      <div class="card-product">
+      <div class="card-trip">
 
-        <%= cl_image_tag baby.photo %>
+        <%= cl_image_tag baby.photo, height: 300, width: 400, crop: :fill %>
 
-          <div class="card-product-infos">
+          <div class="card-trip-infos">
+            <div>
             <h2><%= baby.first_name %></h2>
             <p><strong>Date of birth: </strong><%= baby.date_of_birth %></p>
             <p><strong>Type of baby: </strong><%= baby.category %></p>
-            <p><strong>Price: </strong><%= baby.price %></p>
-          </div>
+             </div>
+    <h2 class="card-trip-pricing"> <%= baby.price %> $/h</h2>
 
-      </div>
-    <% end %>
-    <% end %>
+    <%= cl_image_tag baby.photo, class: "card-trip-user avatar-bordered"  %>
+
   </div>
-  <br>
+
 </div>
+
+ <% end %>
+    <% end %>
+
+     </div>
+
+  </div>
+
+
+
+
+
+
 
 
