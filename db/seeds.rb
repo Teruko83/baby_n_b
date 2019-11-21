@@ -8,9 +8,9 @@
   User.destroy_all
 
 
-  user1 = User.create!(name: "BrosseAdam", email: "BrosseAdam@email.com", password: "123456")
-  user2 = User.create!(name: "Oraly", email: "Oraly@email.com", password: "123456")
-  user3 = User.create!(name: "Anthena", email: "Anthena@email.com", password: "123456")
+  user1 = User.create!(name: "BrosseAdam", email: "BrosseAdam@email.com", password: "123456", address: "1 Papineau")
+  user2 = User.create!(name: "Oraly", email: "Oraly@email.com", password: "123456", address: "500 Papineau")
+  user3 = User.create!(name: "Anthena", email: "Anthena@email.com", password: "123456", address: "1000 Papineau")
 
   Baby.create!(first_name: "Johnny", date_of_birth: "01/02/2010", category: "calm", bio:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ", price: "15", user: user1, remote_photo_url: "https://source.unsplash.com/random?baby?#{rand}")
   Baby.create!(first_name: "Philippe", date_of_birth: "10/03/2008", category: "calm", bio:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ", price: "15", user: user1, remote_photo_url: "https://source.unsplash.com/random?baby?#{rand}")

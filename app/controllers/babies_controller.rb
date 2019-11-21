@@ -3,10 +3,20 @@ class BabiesController < ApplicationController
 
   def index
     @babies = Baby.all
+
+    @markers = @babies.map do |baby|
+      {
+        lat: baby.user.latitude,
+        lng: baby.user.longitude
+      }
+    end
   end
 
   def show
     @baby = Baby.find(params[:id])
+
+    @markers =[{lat: @baby.user.latitude,
+      lng: @baby.user.longitude}]
   end
 
   def new
