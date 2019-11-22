@@ -1,23 +1,18 @@
-
 <div class="container">
+  <div class="row mt-5">
 
-<div class="row mt-5">
+    <h1>Insert here the details of your baby</h1>
+      <%= simple_form_for [@baby] do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :date_of_birth %>
+        <%= f.input :category %>
+        <%= f.input :bio %>
+        <%= f.input :photo %>
+        <%= f.input :price %>
+        <%= f.input :photo_cache, as: :hidden %>
 
-<%= simple_form_for [@baby] do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :date_of_birth %>
-  <%= f.input :category %>
-  <%= f.input :bio %>
-  <%= f.input :photo %>
-  <%= f.input :price %>
-  <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit "Add a baby", class: "btn btn-primary" %>
 
-  <%= f.submit "Add a baby", class: "btn btn-primary" %>
-
-<% end %>
-
-
-</div>
-
-
+      <% end %>
+  </div>
 </div>
