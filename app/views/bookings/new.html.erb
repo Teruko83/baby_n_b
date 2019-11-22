@@ -1,5 +1,5 @@
 <div class = "baby-booking-form">
-<p>Price: <b id="baby-booking-price"><%= @baby.price %></b> $ </p>
+<p>Total price: <b id="baby-booking-price"><%= @baby.price %></b> $ </p>
 <%= simple_form_for [@baby, @booking] do |f| %>
   <%= f.input :booking_start, as: :date, html5: true, label_html: { id: 'booking-baby-start' } %>
   <%= f.input :booking_end, as: :date, html5: true, label_html: { id: 'booking-baby-end' } %>
