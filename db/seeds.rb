@@ -29,7 +29,6 @@
   user15 = User.create!(name: Faker::Name.name, email: Faker::Internet.email, address: Faker::Address.full_address, password: "123456", remote_photo_url: "https://source.unsplash.com/random?woman?#{rand}")
 
 
-
   Baby.create!(first_name: Faker::Name.name, date_of_birth: "01/02/2010", category: "calm", bio:"Nice baby super friendly", price: "35", user: user1, remote_photo_url: "https://source.unsplash.com/random?baby?#{rand}")
   Baby.create!(first_name: Faker::Name.name, date_of_birth: "10/03/2008", category: "calm", bio:"Nice baby super friendly", price: "35", user: user2, remote_photo_url: "https://source.unsplash.com/random?baby?#{rand}")
   Baby.create!(first_name: Faker::Name.name, date_of_birth: "26/02/2015", category: "good spirit", bio:"Nice baby super friendly", price: "50", user: user3, remote_photo_url: "https://source.unsplash.com/random?baby?#{rand}")

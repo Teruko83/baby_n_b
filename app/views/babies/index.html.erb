@@ -20,15 +20,17 @@
 
           <div class="card-trip-infos">
             <div>
-              <h2><%= baby.first_name %></h2>
-              <p><strong>Date of birth: </strong><%= baby.date_of_birth %></p>
-              <p><strong>Type of baby: </strong><%= baby.category %></p>
-            </div>
-            <h2 class="card-trip-pricing"> <%= baby.price %> $/h</h2>
-            <%= cl_image_tag baby.photo, class: "card-trip-user avatar-bordered"  %>
-          </div>
 
-      </div>
+            <h2><%= baby.first_name %></h2>
+            <p><strong>Date of birth: </strong><%= baby.date_of_birth %></p>
+            <p><strong>Type of baby: </strong><%= baby.category %></p>
+             </div>
+    <h2 class="card-trip-pricing"> <%= baby.price %> $/day</h2>
+
+    <%= cl_image_tag baby.user.photo, class: "card-trip-user avatar-bordered"  %>
+
+  </div>
+
 
       <% end %>
     <% end %>
