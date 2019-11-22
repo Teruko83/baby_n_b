@@ -48,6 +48,7 @@
   <% else %>
     <% @user.bookings.each do |booking|  %>
        <p><%= booking.baby.first_name %> | <%= booking.booking_status %></p>
+       <%= (booking.booking_end - booking.booking_start) * booking.baby.price %>
     <% end %>
   <% end %>
 
