@@ -2,7 +2,6 @@
   <div class="container">
     <h1><strong> </strong> All the benefits of having a baby!</h1>
     <p>A baby for a day or a break from your baby? </p>
-    <a class="btn btn-flat" href="#">Sign-up!</a>
   </div>
 </div>
 
@@ -11,25 +10,7 @@
   <div class="cards">
     <% @babies.each do |baby| %>
 
-     <%= link_to baby_path(baby.id) do %>
-
-      <div class="card-trip">
-
-        <%= cl_image_tag baby.photo, height: 300, width: 400, crop: :fill %>
-
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= baby.first_name %></h2>
-              <p><strong>Date of birth: </strong><%= baby.date_of_birth %></p>
-              <p><strong>Type of baby: </strong><%= baby.category %></p>
-            </div>
-            <h2 class="card-trip-pricing"> <%= baby.price %> $/h</h2>
-            <%= cl_image_tag baby.user.photo, class: "card-trip-user avatar-bordered"  %>
-          </div>
-
-      </div>
-
-      <% end %>
+     <%= render "babies/baby_card", baby: baby %>
     <% end %>
 
   </div>

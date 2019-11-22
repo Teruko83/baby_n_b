@@ -40,25 +40,8 @@
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><div class="cards">
     <% current_user.babies.each do |baby| %>
 
-     <%= link_to baby_path(baby.id) do %>
+     <%= render "babies/baby_card", baby: baby %>
 
-      <div class="card-trip">
-
-        <%= cl_image_tag baby.photo, height: 300, width: 400, crop: :fill %>
-
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= baby.first_name %></h2>
-              <p><strong>Date of birth: </strong><%= baby.date_of_birth %></p>
-              <p><strong>Type of baby: </strong><%= baby.category %></p>
-            </div>
-            <h2 class="card-trip-pricing"> <%= baby.price %> $/h</h2>
-            <%= cl_image_tag baby.photo, class: "card-trip-user avatar-bordered"  %>
-          </div>
-
-      </div>
-
-      <% end %>
     <% end %>
 
   </div></div>
