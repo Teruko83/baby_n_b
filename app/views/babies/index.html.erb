@@ -25,7 +25,7 @@
               <p><strong>Type of baby: </strong><%= baby.category %></p>
             </div>
             <h2 class="card-trip-pricing"> <%= baby.price %> $/h</h2>
-            <%= cl_image_tag baby.photo, class: "card-trip-user avatar-bordered"  %>
+            <%= cl_image_tag baby.user.photo, class: "card-trip-user avatar-bordered"  %>
           </div>
 
       </div>
