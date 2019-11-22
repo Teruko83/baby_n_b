@@ -1,4 +1,11 @@
-<h1>Welcome to BB'n'B</h1>
+<div class="banner" style=" background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1><strong>Baby'n'B </strong>brings all your wishes to life!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+
 
 <div class="container">
   <h2>Babies available</h2>
@@ -13,25 +20,22 @@
 
           <div class="card-trip-infos">
             <div>
-            <h2><%= baby.first_name %></h2>
-            <p><strong>Date of birth: </strong><%= baby.date_of_birth %></p>
-            <p><strong>Type of baby: </strong><%= baby.category %></p>
-             </div>
-    <h2 class="card-trip-pricing"> <%= baby.price %> $/h</h2>
+              <h2><%= baby.first_name %></h2>
+              <p><strong>Date of birth: </strong><%= baby.date_of_birth %></p>
+              <p><strong>Type of baby: </strong><%= baby.category %></p>
+            </div>
+            <h2 class="card-trip-pricing"> <%= baby.price %> $/h</h2>
+            <%= cl_image_tag baby.photo, class: "card-trip-user avatar-bordered"  %>
+          </div>
 
-    <%= cl_image_tag baby.photo, class: "card-trip-user avatar-bordered"  %>
+      </div>
+
+      <% end %>
+    <% end %>
 
   </div>
 
 </div>
-
- <% end %>
-    <% end %>
-
-     </div>
-
-  </div>
-
 
 
 
