@@ -1,36 +1,35 @@
 <!-- contient Profile du bebe et bouton book -->
 <!-- vu du point de vue de utilisateur -->
 
-<div class="container">
+<div class="big_container">
 
-
-<div class="bbshow-img"> <%= cl_image_tag @baby.photo %></div>
-
-
-
-
-      <h2><%= @baby.first_name %>'s Profil</h2>
-      <h4>Date of birth</h4>
+  <div class="profil_container">
+    <div class="bbshow-img"> <%= cl_image_tag @baby.photo %>
+    </div>
+    <div class="profil_info">
+      <h3><%= @baby.first_name %>'s Profil</h3>
+      <h4 class="profil_title">Date of birth</h4>
       <p><%= @baby.date_of_birth %></p>
-      <h4>Category</h4>
+      <h4 class="profil_title">Category</h4>
       <p><%= @baby.category %></p>
-      <h4>Description</h4>
-      <p><%= @baby.bio %></p>
-       <h4>Price per day</h4>
-      <p><%= @baby.price %></p>
+      <h4 class="profil_title">Description</h4>
+      <p class="profil_descriptio"><%= @baby.bio %></p>
+       <h4 class="profil_title">Price per day</h4>
+      <p><%= @baby.price %> $</p>
+    </div>
+    <div class= "profil_actions">
+      <%= link_to "Book this baby",  new_baby_booking_path(@baby), class: "btn btn-primary" %>
+      <% if current_user == @baby.user %>
+        <%= link_to "Update",  edit_baby_path, class: "btn btn-primary" %>
+        <%= link_to "Delete", baby_path(@baby), :method => 'delete', class: "btn btn-primary"  %>
+      <% end %>
+    </div>
+  </div>
 
-  <%= link_to "Book this baby",  new_baby_booking_path(@baby), class: "btn btn-primary" %>
-  <% if current_user == @baby.user %>
-    <%= link_to "Update",  edit_baby_path, class: "btn btn-primary" %>
-    <%= link_to "Delete", baby_path(@baby), :method => 'delete', class: "btn btn-primary"  %>
-  <% end %>
-
+   <div
+    id="map"
+    class="fake-map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAP_API_KEY'] %>"
+    ></div>
 </div>
-
- <div
-            id="map"
-            style="width: 100%;
-            height: 600px;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAP_API_KEY'] %>"
-          ></div>
