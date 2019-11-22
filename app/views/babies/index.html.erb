@@ -1,14 +1,13 @@
-<div class="banner" style=" background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style=" background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1470334165954-365e14d84faa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80);">
   <div class="container">
-    <h1><strong>Baby'n'B </strong>brings all your wishes to life!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <h1><strong> </strong> All the benefits of having a baby!</h1>
+    <p>A baby for a day or a break from your baby? </p>
+    <a class="btn btn-flat" href="#">Sign-up!</a>
   </div>
 </div>
 
 
 <div class="container">
-  <h2>Babies available</h2>
   <div class="cards">
     <% @babies.each do |baby| %>
 
@@ -45,6 +44,25 @@
 
 </div>
 
+<div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAP_API_KEY'] %>"
+  ></div>
+
+    <div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
 
 
 
